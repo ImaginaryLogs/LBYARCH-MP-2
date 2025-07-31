@@ -4,6 +4,10 @@
 
 A C and x86 assembly code that adds vectors together.
 
+## Specs
+
+<img width="648" height="777" alt="Kernel Testing (Both)" src="https://github.com/ImaginaryLogs/LBYARCH-MP-2/blob/main/Project%20Specifications.png" />
+
 ## Output
 
 Screenshot of Output (with analytics and correction check):
