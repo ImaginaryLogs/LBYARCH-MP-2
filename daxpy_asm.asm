@@ -8,7 +8,7 @@ global daxpy_asm
 ; [rsp+40] = int n (5th argument) due to shadow space
 
 daxpy_asm:
-    movsd   xmm0, [r9]            ; xmm0 = *a
+    movsd   xmm0, xmm3            
     mov     r10, 0                ; i = 0
     mov     r11d, dword [rsp + 40] ; load n (fifth argument)
 

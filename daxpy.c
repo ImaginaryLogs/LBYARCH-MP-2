@@ -6,12 +6,7 @@
 #include <malloc.h> // For _aligned_malloc and _aligned_free on Windows
 
 // Correct declaration — assembly expects pointer to a
-extern void daxpy_asm(double* z, double* x, double* y, double* a, int n);
-
-// Wrapper that converts double a → pointer &a
-void daxpy_asm_bridge(double* z, double* x, double* y, double a, int n) {
-    daxpy_asm(z, x, y, &a, n);
-}
+extern void daxpy_asm(double* z, double* x, double* y, double a, int n);
 
 void daxpy_c(double* z, double* x, double* y, double a, int n) {
     for (int i = 0; i < n; i++) {
@@ -53,7 +48,7 @@ void benchmark(void (*kernel)(double*, double*, double*, double, int),
         end = clock();
         total += (double)(end - start) / CLOCKS_PER_SEC;
     }
-
+    printf("%s total run time over 30 runs (n=%d): %f seconds\n", name, n, total);
     printf("%s average time over 30 runs (n=%d): %f seconds\n", name, n, total / 30);
 }
 
@@ -78,7 +73,7 @@ int main() {
         init_vectors(x, y, n);
 
         benchmark(daxpy_c, "C Version", z_c, x, y, A, n);
-        benchmark(daxpy_asm_bridge, "ASM Version", z_asm, x, y, A, n);
+        benchmark(daxpy_asm, "ASM Version", z_asm, x, y, A, n);
 
         if (check_correctness(z_c, z_asm, n)) {
             printf("Correctness Check Passed!\n");
