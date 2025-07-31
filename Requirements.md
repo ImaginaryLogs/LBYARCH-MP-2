@@ -20,7 +20,7 @@ x -> 1.0, 2.0, 3.0
 y -> 11.0, 12.0, 13.0  
 (answer) z --> 13.0, 16.0, 19.0
 
-## **Output** 
+## **Output**
 Store the result in vector Z. Display the result of the first ten elements of vector Z for all versions of the kernel (i.e., C and x86-64).
 
 ## Note
@@ -38,7 +38,7 @@ Store the result in vector Z. Display the result of the first ten elements of ve
       i. Comparative execution time and short analysis of the performance of the kernels  
       ii. Screenshot of the program output with the correctness check (C)  
       iii. Screenshot of the program output, including the correctness check (x86-64)  
-      iv. Short videos (5–10 minutes) showing your source code, compilation, and execution of the C and x86-64 program  
+      iv. ~~Short videos (5–10 minutes) showing your source code, compilation, and execution of the C and x86-64 program~~
    b. Visual Studio project folder containing complete files (source code: C, x86-64, and all other required files) for others to load and execute your program.
 
 Rubric:
